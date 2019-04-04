@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">PADC_Simple_Habit_WYMM</string>
     <string name="action_settings">Settings</string>
+    <string name="meditate">Meditate</string>
+    <string name="me">Me</string>
+    <string name="more">More</string>
+    <string name="recommended_for_you">Recommended for You</string>
+    <string name="day1">Day 1</string>
+    <string name="simple_habit_starter">Simple Habit Starter</string>
+    <string name="mins5">1 mins</string>
+    <string name="featured">Featured</string>
+    <string name="forgiveness">Forgiveness</string>
+    <string name="learn_meditation_fundamentals">Learn meditation fundamentals</string>
+    <string name="all_topics">All Topics</string>
+    <string name="des">The orange is the fruit of the citrus species Citrus....The orange is the fruit of the citrus species Citrus....The orange is the fruit of the citrus species Citrus .....The orange is the fruit of the citrus species Citrus × sinensis in the family Rutaceae. It is also called sweet orange, to distinguish it from the related Citrus × aurantium, referred to as bitter orange.</string>
 </resources>

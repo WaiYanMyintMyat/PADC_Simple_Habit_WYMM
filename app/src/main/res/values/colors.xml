@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <!--toolbar color-->
+    <color name="colorPrimary">#373F4E</color>
+    <!--status bar color-->
+    <color name="colorPrimaryDark">#212837</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white_all">#ffffffff</color>
+    <color name="light_green">#2CDDC3</color>
+
+    <color name="darkblack">#1d2326</color>
+    <color name="blue">#7dc7ca</color>
+    <color name="darkGray">#202733</color>
+    <color name="overlay">#33000000</color>
+    <color name="gray">#c4c7cb</color>
 </resources>

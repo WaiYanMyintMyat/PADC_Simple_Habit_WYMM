@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/all_topics"
+        android:visibility="gone"
+        android:textColor="@color/white_all"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@color/colorPrimaryDark">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dummy_topics" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_topic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_small"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv_small"
+            android:textColor="@color/white_all"
+            android:text="@string/featured" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_topic_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_topic_name"
+            android:layout_alignLeft="@+id/tv_topic_name"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/iv_small"
+            android:textColor="@color/white_all"
+            android:text="@string/learn_meditation_fundamentals" />
+    </RelativeLayout>
+</LinearLayout>

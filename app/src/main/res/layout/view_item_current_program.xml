@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/recommended_for_you"
+        android:textColor="@color/white_all"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/dummy_current_program"
+            android:scaleType="fitXY" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtn_day1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:icon="@drawable/ic_play_arrow_white_24dp"
+            app:iconTint="@color/white_all"
+            android:text="@string/day1"
+            android:textAllCaps="false"
+            android:textColor="@color/white_all"
+            app:backgroundTint="@color/light_green"
+            app:cornerRadius="16dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_button_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/mbtn_day1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/simple_habit_starter"
+            android:textColor="@color/white_all"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_add_white_24dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/mins5"
+            android:layout_margin="10dp"/>
+    </RelativeLayout>
+</LinearLayout>
