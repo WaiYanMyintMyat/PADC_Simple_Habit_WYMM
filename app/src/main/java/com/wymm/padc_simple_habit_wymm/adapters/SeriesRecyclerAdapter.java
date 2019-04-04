@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wymm.padc_simple_habit_wymm.R;
+import com.wymm.padc_simple_habit_wymm.data.vos.BaseVO;
 import com.wymm.padc_simple_habit_wymm.data.vos.CategoriesAndProgramsVO;
 import com.wymm.padc_simple_habit_wymm.data.vos.CurrentProgramVO;
 import com.wymm.padc_simple_habit_wymm.data.vos.TopicsVO;
 import com.wymm.padc_simple_habit_wymm.delegates.CurrentProgramItemDelegate;
+import com.wymm.padc_simple_habit_wymm.views.holders.BaseViewHolder;
 import com.wymm.padc_simple_habit_wymm.views.holders.CategoriesAndProgramsRecyclerViewViewHolder;
 import com.wymm.padc_simple_habit_wymm.views.holders.CurrentProgramViewHolder;
 import com.wymm.padc_simple_habit_wymm.views.holders.TopicsViewHolder;
@@ -19,12 +21,11 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Wai Yan Myint Myat on 3/29/19.
  */
-public class SeriesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class SeriesRecyclerAdapter extends BaseRecyclerAdapter<BaseViewHolder<BaseVO>, BaseVO> {
 
     private static final int CURRENT_PROGRAM_VIEW = 0;
     private static final int CATEGORIES_AND_PROGRAMS_RECYCLER_VIEW = 1;
@@ -43,7 +44,7 @@ public class SeriesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 
@@ -62,7 +63,7 @@ public class SeriesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
         switch (holder.getItemViewType()) {
             case CURRENT_PROGRAM_VIEW:
                 ((CurrentProgramViewHolder) holder).tvButtonTitle.setText(mCurrentProgramVO.getTitle());

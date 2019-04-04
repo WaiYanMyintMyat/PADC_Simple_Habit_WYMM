@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Wai Yan Myint Myat on 3/30/19.
  */
-public class CategoriesAndProgramsVO {
+public class CategoriesAndProgramsVO extends BaseVO{
     @SerializedName("category-id")
     @Expose
     private String categoryId;

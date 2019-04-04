@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Wai Yan Myint Myat on 3/29/19.
  */
-public class CurrentProgramVO {
+public class CurrentProgramVO extends BaseVO{
     @SerializedName("program-id")
     @Expose
     private String programId;

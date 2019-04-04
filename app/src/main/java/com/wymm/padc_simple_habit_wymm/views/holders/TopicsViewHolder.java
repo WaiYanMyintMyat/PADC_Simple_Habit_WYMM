@@ -3,17 +3,16 @@ package com.wymm.padc_simple_habit_wymm.views.holders;
 import android.view.View;
 
 import com.wymm.padc_simple_habit_wymm.R;
+import com.wymm.padc_simple_habit_wymm.data.vos.TopicsVO;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by Wai Yan Myint Myat on 3/29/19.
  */
-public class TopicsViewHolder extends RecyclerView.ViewHolder {
+public class TopicsViewHolder extends BaseViewHolder<TopicsVO> {
     @BindView(R.id.tv_topic_name)
     public AppCompatTextView tvTopicName;
 
@@ -25,6 +24,5 @@ public class TopicsViewHolder extends RecyclerView.ViewHolder {
 
     public TopicsViewHolder(@NonNull View itemView) {
         super(itemView);
-        ButterKnife.bind(this,itemView);
     }
 }
