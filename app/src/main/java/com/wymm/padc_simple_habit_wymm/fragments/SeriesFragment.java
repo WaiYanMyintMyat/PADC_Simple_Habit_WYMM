@@ -41,6 +41,7 @@ public class SeriesFragment extends BaseFragment {
     private TopicsModelImpl mTopicsModelImpl;
 
     private CurrentProgramItemDelegate currentProgramItemDelegate;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -51,7 +52,7 @@ public class SeriesFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_series, container, false);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -70,7 +71,7 @@ public class SeriesFragment extends BaseFragment {
     }
 
     private void getCurrentProgramData() {
-        mCurrentProgramImpl.getCurrentProgramVO(new CurrentProgramModel.CurrentProgramDelegateToView() {
+        CurrentProgramVO currentProgramVO = mCurrentProgramImpl.getCurrentProgramVO(new CurrentProgramModel.CurrentProgramDelegateToView() {
             @Override
             public void onCurrentProgramFetchFromNetwork(CurrentProgramVO currentProgramVO) {
                 seriesRecyclerAdapter.setCurrentProgramData(currentProgramVO);
@@ -81,10 +82,14 @@ public class SeriesFragment extends BaseFragment {
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
             }
         });
+
+        if (currentProgramVO != null) {
+            seriesRecyclerAdapter.setCurrentProgramData(currentProgramVO);
+        }
     }
 
     private void getCategoriesAndPrograms() {
-        mCategoriesAndProgramsImpl.getCategoriesAndProgramsModel(new CategoriesAndProgramsModel.CategoriesAndProgramsDelegateToView() {
+        List<CategoriesAndProgramsVO> categoriesAndProgramsVOList = mCategoriesAndProgramsImpl.getCategoriesAndProgramsModel(new CategoriesAndProgramsModel.CategoriesAndProgramsDelegateToView() {
             @Override
             public void onCategoriesAndProgramsFetchFromNetwork(List<CategoriesAndProgramsVO> categoriesAndProgramsVOList) {
                 seriesRecyclerAdapter.setCategoriesAndProgramsList(categoriesAndProgramsVOList);
@@ -95,10 +100,14 @@ public class SeriesFragment extends BaseFragment {
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
             }
         });
+
+        if (categoriesAndProgramsVOList != null) {
+            seriesRecyclerAdapter.setCategoriesAndProgramsList(categoriesAndProgramsVOList);
+        }
     }
 
     private void getTopics() {
-        mTopicsModelImpl.getTopicsList(new TopicsModel.TopicsDelegateToView() {
+        List<TopicsVO> topicsVOList = mTopicsModelImpl.getTopicsList(new TopicsModel.TopicsDelegateToView() {
             @Override
             public void onTopicsFetchFromNetwork(List<TopicsVO> topicsVOList) {
                 seriesRecyclerAdapter.setTopicsList(topicsVOList);
@@ -106,9 +115,14 @@ public class SeriesFragment extends BaseFragment {
 
             @Override
             public void onErrorTopicsFetch(String message) {
-                Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();;
+                Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                ;
             }
         });
+
+        if (topicsVOList != null) {
+            seriesRecyclerAdapter.setTopicsList(topicsVOList);
+        }
     }
 
 }

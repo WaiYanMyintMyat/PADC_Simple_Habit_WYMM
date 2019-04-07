@@ -42,4 +42,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     //Gson Converter Library
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //room Db
+    implementation "android.arch.persistence.room:runtime:1.1.0"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.0"
 }

@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Wai Yan Myint Myat on 3/30/19.
  */
 public interface CategoriesAndProgramsModel {
-    void getCategoriesAndProgramsModel(CategoriesAndProgramsDelegateToView categoriesAndProgramsDelegateToView);
+    List<CategoriesAndProgramsVO> getCategoriesAndProgramsModel(CategoriesAndProgramsDelegateToView categoriesAndProgramsDelegateToView);
 
     interface CategoriesAndProgramsDelegateToView {
         void onCategoriesAndProgramsFetchFromNetwork (List<CategoriesAndProgramsVO> categoriesAndProgramsVOList);

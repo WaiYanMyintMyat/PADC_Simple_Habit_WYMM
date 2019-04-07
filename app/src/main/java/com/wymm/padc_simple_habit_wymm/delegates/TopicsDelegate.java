@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Created by Wai Yan Myint Myat on 3/30/19.
  */
-public interface TopicsDelegate {
+public interface TopicsDelegate extends BaseNetworkDelegate{
     void onSuccess(List<TopicsVO> topicsVOList);
-    void onFail(String message);
 }

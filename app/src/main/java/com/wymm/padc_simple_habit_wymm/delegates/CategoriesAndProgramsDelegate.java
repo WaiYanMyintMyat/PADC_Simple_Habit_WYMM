@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Created by Wai Yan Myint Myat on 3/30/19.
  */
-public interface CategoriesAndProgramsDelegate {
+public interface CategoriesAndProgramsDelegate extends BaseNetworkDelegate{
     void onSuccess(List<CategoriesAndProgramsVO> categoriesAndProgramsVOList);
-    void onFail(String message);
 }

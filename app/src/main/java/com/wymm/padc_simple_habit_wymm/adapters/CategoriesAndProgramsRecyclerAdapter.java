@@ -8,9 +8,6 @@ import com.wymm.padc_simple_habit_wymm.R;
 import com.wymm.padc_simple_habit_wymm.data.vos.CategoriesAndProgramsVO;
 import com.wymm.padc_simple_habit_wymm.views.holders.CategoriesAndProgramsViewHolder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,15 +21,15 @@ public class CategoriesAndProgramsRecyclerAdapter extends RecyclerView.Adapter<R
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_item_categories_and_programs,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_item_categories_and_programs, parent, false);
         return new CategoriesAndProgramsViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((CategoriesAndProgramsViewHolder)holder).tvTitle.setText(mCategoriesAndProgramsVO.getPrograms().get(position).getTitle());
-        if (mCategoriesAndProgramsVO.getPrograms().get(position).getAverageLengths().size()>0){
-            ((CategoriesAndProgramsViewHolder)holder).tvMin.setText(String.valueOf(mCategoriesAndProgramsVO.getPrograms().get(position).getAverageLengths().get(0)).concat(" mins"));
+        ((CategoriesAndProgramsViewHolder) holder).tvTitle.setText(mCategoriesAndProgramsVO.getPrograms().get(position).getTitle());
+        if (mCategoriesAndProgramsVO.getPrograms().get(position).getAverageLengths().size() > 0) {
+            ((CategoriesAndProgramsViewHolder) holder).tvMin.setText(String.valueOf(mCategoriesAndProgramsVO.getPrograms().get(position).getAverageLengths().get(0)).concat(" mins"));
         }
     }
 

@@ -66,6 +66,7 @@ public class SeriesRecyclerAdapter extends BaseRecyclerAdapter<BaseViewHolder<Ba
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
         switch (holder.getItemViewType()) {
             case CURRENT_PROGRAM_VIEW:
+                ((CurrentProgramViewHolder)holder).mBtnDay.setText(mCurrentProgramVO.getCurrentPeriod());
                 ((CurrentProgramViewHolder) holder).tvButtonTitle.setText(mCurrentProgramVO.getTitle());
                 if (mCurrentProgramVO.getAverageLengths().size() > 0) {
                     ((CurrentProgramViewHolder) holder).tvMin.setText(String.valueOf(mCurrentProgramVO.getAverageLengths().get(0)).concat(" mins"));
@@ -129,9 +130,11 @@ public class SeriesRecyclerAdapter extends BaseRecyclerAdapter<BaseViewHolder<Ba
 
     public void setCategoriesAndProgramsList(List<CategoriesAndProgramsVO> categoriesAndProgramsList) {
         mCategoriesAndProgramsList = categoriesAndProgramsList;
+        notifyDataSetChanged();
     }
 
     public void setTopicsList(List<TopicsVO> topicsList) {
         mTopicsList = topicsList;
+        notifyDataSetChanged();
     }
 }

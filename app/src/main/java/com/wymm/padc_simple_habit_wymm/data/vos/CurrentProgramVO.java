@@ -6,28 +6,47 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 /**
  * Created by Wai Yan Myint Myat on 3/29/19.
  */
+@Entity(tableName = "current_program")
 public class CurrentProgramVO extends BaseVO{
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "program_id")
     @SerializedName("program-id")
     @Expose
     private String programId;
+
+    @ColumnInfo(name = "title")
     @SerializedName("title")
     @Expose
     private String title;
+
+    @ColumnInfo(name = "current_period")
     @SerializedName("current-period")
     @Expose
     private String currentPeriod;
+
+    @ColumnInfo(name = "background")
     @SerializedName("background")
     @Expose
     private String background;
+
     @SerializedName("average-lengths")
     @Expose
     private List<Integer> averageLengths;
+
+    @ColumnInfo(name = "description")
     @SerializedName("description")
     @Expose
     private String description;
+
     @SerializedName("sessions")
     @Expose
     private List<SessionVO> sessions;

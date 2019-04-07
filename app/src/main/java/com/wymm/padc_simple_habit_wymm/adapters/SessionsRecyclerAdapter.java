@@ -38,5 +38,6 @@ public class SessionsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     public void setCurrentProgramVO(List<SessionVO> sessionVOList){
         mSessionVOList = sessionVOList;
+        notifyDataSetChanged();
     }
 }

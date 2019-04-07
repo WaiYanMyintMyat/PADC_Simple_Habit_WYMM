@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Wai Yan Myint Myat on 3/30/19.
  */
 public interface TopicsModel {
-    void getTopicsList(TopicsDelegateToView topicsDelegateToView);
+    List<TopicsVO> getTopicsList(TopicsDelegateToView topicsDelegateToView);
 
     interface TopicsDelegateToView {
         void onTopicsFetchFromNetwork(List<TopicsVO> topicsVOList);
